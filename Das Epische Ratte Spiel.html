@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script>
+         function RatteSpiel() {
+            let number = document.getElementById("DerZahlenRegler").value;
+            let Ergrbniss = Math.floor(Math.random() * 10) + 1;
+            if (number === Ergrbniss) {
+                alert("WOW du kannst Ja sogar Ratten");
+            } else {
+                alert("War wohl nichts do looser 🤣 Die Zahl war "+ Ergrbniss);
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            background-color: slategray;
+            text-align: center;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Das Epische Ratte Spiel</h1>
+    <label for="DerZahlenRegler">Ratte eine Zahl von 1 bis 10!</label><br>
+    <input type="number" id="DerZahlenRegler" min="1" max="10">
+    <button onclick="RatteSpiel()">abschicken</button>
+</body>
+
+</html>

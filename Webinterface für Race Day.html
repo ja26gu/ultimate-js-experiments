@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Webinterface zu einer aufgabe von code accademie https://www.codecademy.com/courses/introduction-to-javascript/projects/race-day -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function number() {
+        let raceNumber = Math.floor(Math.random() * 1000);
+        let registeredEarly = document.getElementById("registeredEarly").checked;
+        let responseElement = document.getElementById("response");
+        let runnerAge = document.getElementById("runnerAge").value;
+        let response;
+        if (registeredEarly === true && runnerAge > 18) {
+          raceNumber += 1000;
+          response =
+            "Your race will begin at 9:30 am and your race Nummber is " +
+            raceNumber;
+          console.log(response);
+        } else if (registeredEarly === false && runnerAge > 18) {
+          response =
+            "Your race will begin at 11:00 am and your race Nummber is " +
+            raceNumber;
+          console.log(response);
+        } else if (runnerAge < 18) {
+          response =
+            "Your race will begin at 12:30 am and your race Nummber is " +
+            raceNumber;
+          console.log(response);
+        } else {
+          response = "please visit the registration desk";
+          console.log(response);
+        }
+        responseElement.innerHTML = response;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Sport du weißt</h1>
+    <label for="runnerAge">Dein Alter:</label>
+    <input type="number" id="runnerAge" /><br>
+    <label for="registeredEarly">Hast du dich früh registriert?</label>
+    <input type="checkbox" id="registeredEarly" /><br>
+    <button onclick="number()">Abschicken</button><br>
+    <h3 id="response"></h3>
+  </body>
+</html>
