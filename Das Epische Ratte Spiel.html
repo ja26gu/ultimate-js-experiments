@@ -8,7 +8,7 @@
     <title>Document</title>
     <script>
          function RatteSpiel() {
-            let number = document.getElementById("DerZahlenRegler").value;
+            let number = praseInt(document.getElementById("DerZahlenRegler").value);
             let Ergrbniss = Math.floor(Math.random() * 10) + 1;
             if (number === Ergrbniss) {
                 alert("WOW du kannst Ja sogar Ratten");
